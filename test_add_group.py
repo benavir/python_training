@@ -4,9 +4,9 @@ from group import Group
 from application import Application
 
 
-@pytest.fixture()
+@pytest.fixture
 def app(request):
-    fixture = Application
+    fixture = Application()
     request.addfinalizer(fixture.destroy)
     return fixture
 
