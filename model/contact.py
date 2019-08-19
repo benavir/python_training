@@ -7,3 +7,4 @@ class Contact:
         self.Title = Title
         self.Company = Company
         self.Address = Address
+
