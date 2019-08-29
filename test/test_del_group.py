@@ -6,4 +6,5 @@ def test_delete_first_group(app):
         app.group.create()
         app.group.fill(Group(name="test"))
         app.group.submit()
+        app.open_groups_page()
     app.group.delete()
