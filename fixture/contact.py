@@ -64,7 +64,9 @@ class ContactHelper:
 
     def home_page(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("home").click()
+        if not (wd.current_url("http://localhost/addressbook/") and len(wd.find_elementd_by_xpath("//input[@value='Delete']")) > 0):
+            wd.find_element_by_link_text("home").click()
+        # wd.find_element_by_link_text("home").click()
 
     def count(self):
         wd = self.app.wd
