@@ -65,7 +65,8 @@ class ContactHelper:
     def home_page(self):
         wd = self.app.wd
         if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_xpath("//input[@value='Send e-Mail']")) > 0):
-            wd.get("http://localhost/addressbook/index.php")
+            wd.find_element_by_link_text("home").click()
+#            wd.get("http://localhost/addressbook/index.php")
 
     def count(self):
         wd = self.app.wd
