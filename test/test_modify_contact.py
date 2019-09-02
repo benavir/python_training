@@ -3,6 +3,7 @@ from model.contact import Contact
 
 
 def test_modify_contact_first_name(app):
+    app.contact.home_page()
     if app.contact.count() == 0:
         app.contact.create()
         app.contact.fill(Contact(FirstName="Test"))
@@ -12,6 +13,7 @@ def test_modify_contact_first_name(app):
 
 
 def test_modify_contact_middle_name(app):
+    app.contact.home_page()
     if app.contact.count() == 0:
         app.contact.create()
         app.contact.fill(Contact(MiddleName="Test"))
