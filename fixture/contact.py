@@ -45,8 +45,11 @@ class ContactHelper:
         self.contact_cash = None
 
     def delete(self):
+        self.delete_contact_by_index(0)
+
+    def delete_contact_by_index(self, index):
         wd = self.app.wd
-        self.select_first_contact()
+        self.select_contact_by_index(index)
         # submit deletion
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to_alert().accept()
@@ -57,8 +60,20 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_element_by_name("selected[]").click()
 
+    def select_contact_by_index(self, index):
+        wd = self.app.wd
+        wd.find_elements_by_name("selected[]")[index].click()
+
     def modify_first_contact(self, new_contact_data):
         wd = self.app.wd
+        # fill contact form
+        self.fill(new_contact_data)
+        # submit modification
+        self.update()
+
+    def modify_contact_by_index(self, index, new_contact_data):
+        wd = self.app.wd
+        self.select_contact_by_index(index)
         # fill contact form
         self.fill(new_contact_data)
         # submit modification
