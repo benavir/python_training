@@ -32,16 +32,11 @@ class ContactHelper:
         wd.find_element_by_name("update").click()
         wd.find_element_by_link_text("home page").click()
 
-    def edit(self):
-        wd = self.app.wd
-        self.select_first_contact()
-        # push the button "Edit contact"
-        wd.find_element_by_xpath("//img[@alt='Edit']").click()
-
     def submit(self):
         wd = self.app.wd
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
         self.return_to_home_page()
+        self.contact_cash = None
 
     def delete(self):
         wd = self.app.wd
@@ -76,11 +71,14 @@ class ContactHelper:
         wd = self.app.wd
         return len(wd.find_elements_by_name("selected[]"))
 
+    contact_cash = None
+
     def get_contact_list(self):
-        wd = self.app.wd
-        self.home_page()
-        contacts = []
-        for element in wd.find_elements_by_xpath("//tr[@name='entry']"):
-            id = element.find_element_by_name("selected[]").get_attribute("value")
-            contacts.append(Contact(id=id))
-        return contacts
+        if self.contact_cash is None:
+            wd = self.app.wd
+            self.home_page()
+            self.contact_cash = []
+            for element in wd.find_elements_by_xpath("//tr[@name='entry']"):
+                id = element.find_element_by_name("selected[]").get_attribute("value")
+                self.contact_cash.append(Contact(id=id))
+        return list(self.contact_cash)
