@@ -32,6 +32,12 @@ class ContactHelper:
         wd.find_element_by_name("update").click()
         wd.find_element_by_link_text("home page").click()
 
+    def edit(self):
+        wd = self.app.wd
+        self.select_first_contact()
+        # push the button "Edit contact"
+        wd.find_element_by_xpath("//img[@alt='Edit']").click()
+
     def submit(self):
         wd = self.app.wd
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
