@@ -8,3 +8,9 @@ class Contact:
         self.Company = Company
         self.Address = Address
         self.id = id
+
+    def __repr__(self):
+        return "%s" % self.id
+
+    def __eq__(self, other):
+        return self.id == other.id
