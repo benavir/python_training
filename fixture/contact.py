@@ -97,9 +97,9 @@ class ContactHelper:
             wd = self.app.wd
             self.home_page()
             self.contact_cash = []
-#            for element in wd.find_elements_by_xpath("//table[@id='maintable']"):
             for element in wd.find_elements_by_xpath("//tr[@name='entry']"):
                 text = element.find_element_by_xpath("td[3]").text
+                text_last = element.find_element_by_xpath("td[2]").text
                 id = element.find_element_by_name("selected[]").get_attribute("value")
-                self.contact_cash.append(Contact(FirstName=text, id=id))
+                self.contact_cash.append(Contact(FirstName=text, LastName=text_last, id=id))
         return list(self.contact_cash)
