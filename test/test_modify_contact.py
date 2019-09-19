@@ -2,14 +2,15 @@ from model.contact import Contact
 from random import randrange
 
 
-def test_modify_contact_first_name(app):
+def test_modify_contact_first_name(app, json_contacts):
+    contact = json_contacts
     if app.contact.count() == 0:
         app.contact.create()
         app.contact.fill(Contact(FirstName="Test", LastName="Test"))
         app.contact.submit()
     old_contacts = app.contact.get_contact_list()
     index = randrange(len(old_contacts))
-    contact = Contact(FirstName="New First name", LastName="New Last name")
+#    contact = Contact(FirstName="New First name", LastName="New Last name")
     contact.id = old_contacts[index].id
     app.contact.modify_contact_by_index(index, contact)
     new_contacts = app.contact.get_contact_list()
