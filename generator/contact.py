@@ -2,7 +2,7 @@ from model.contact import Contact
 import random
 import string
 import os.path
-import json
+import jsonpickle
 import getopt
 import sys
 
@@ -28,10 +28,18 @@ def random_string(prefix, maxlen):
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
 
-testdata = [Contact(FirstName="", MiddleName="", LastName="", Title="", Company="", Address="")] + [
+def random_phone(prefix, maxlen):
+    symbols = string.digits*10
+    return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
+
+
+testdata = [Contact(FirstName="", MiddleName="", LastName="", Title="", Company="", Address="",
+                    homephone="", mobilephone="", workphone="", secondaryphone="", email="", email2="", email3="")] + [
     Contact(FirstName=random_string("First", 5), MiddleName=random_string("Middle", 5), LastName=random_string("Last", 5),
-            Title=random_string("TitleTest", 10), Company=random_string("CompanyTest", 10),
-            Address=random_string("TestAddress, 1", 10))
+            Title=random_string("TitleTest", 10), Company=random_string("CompanyTest", 10), Address=random_string("TestAddress, 1", 10),
+            homephone=random_phone("+7(495)", 10), mobilephone=random_phone("+7", 10),
+            workphone=random_phone("+7(495)", 10), secondaryphone=random_phone("+7", 10),
+            email=random_string("email", 5), email2=random_string("email", 5), email3=random_string("email", 5))
     for i in range(n)
 ]
 
@@ -39,4 +47,5 @@ testdata = [Contact(FirstName="", MiddleName="", LastName="", Title="", Company=
 file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", f)
 
 with open(file, "w") as out:
-    out.write(json.dumps(testdata, default=lambda x: x.__dict__, indent=2))
+    jsonpickle.set_encoder_options("json", indent=2)
+    out.write(jsonpickle.encode(testdata))
