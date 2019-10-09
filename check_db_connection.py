@@ -19,6 +19,4 @@ try:
         print(row)
     '''
 finally:
-    pass
-#    connection.close()
-#    db.destroy()
+    pass # db.destroy()
