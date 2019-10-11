@@ -83,7 +83,17 @@ class ContactHelper:
     def modify_contact_by_index(self, index, new_contact_data):
         wd = self.app.wd
         self.select_contact_by_index(index)
-        wd.find_elements_by_xpath("//tr[@name='entry']/td[@class='center']/a/img[@alt='Edit']")[index].click()
+        wd.find_elements_by_xpath("(//img[@alt='Edit'])")[index].click()
+        # wd.find_elements_by_xpath("//tr[@name='entry']/td[@class='center']/a/img[@alt='Edit']")[index].click()
+        # fill contact form
+        self.fill(new_contact_data)
+        # submit modification
+        self.update()
+
+    def modify_contact_by_id(self, id, new_contact_data):
+        wd = self.app.wd
+        self.select_contact_by_id(id)
+        wd.find_element_by_xpath('//a[@href="edit.php?id=%s"]' % id).click()
         # fill contact form
         self.fill(new_contact_data)
         # submit modification
