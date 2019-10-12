@@ -3,7 +3,7 @@ import random
 
 
 def test_modify_group_name(app, db, json_groups, check_ui):
-    group = json_groups
+    group_data = json_groups
     if len(db.get_group_list()) == 0:
         app.group.create()
         app.group.fill(Group(name="test"))
@@ -12,7 +12,7 @@ def test_modify_group_name(app, db, json_groups, check_ui):
     old_groups = db.get_group_list()
     group = random.choice(old_groups)
     index = old_groups.index(group)
-    app.group.modify_group_by_id(group.id, group)
+    app.group.modify_group_by_id(group.id, group_data)
     new_groups = db.get_group_list()
     old_groups[index] = new_groups[index]
     # assert len(old_groups) == len(new_groups)

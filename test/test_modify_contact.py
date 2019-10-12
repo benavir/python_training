@@ -3,15 +3,15 @@ import random
 
 
 def test_modify_contact_first_name(app, db, json_contacts, check_ui):
-    contact = json_contacts
-    if app.contact.count() == 0:
+    contact_data = json_contacts
+    if len(db.get_contact_list()) == 0:
         app.contact.create()
         app.contact.fill(Contact(FirstName="Test", LastName="Test"))
         app.contact.submit()
     old_contacts = db.get_contact_list()
     contact = random.choice(old_contacts)
     index = old_contacts.index(contact)
-    app.contact.modify_contact_by_id(contact.id, contact)
+    app.contact.modify_contact_by_id(contact.id, contact_data)
     new_contacts = db.get_contact_list()
     # assert len(old_contacts) == len(new_contacts)
     old_contacts[index] = new_contacts[index]
