@@ -1,5 +1,7 @@
 from model.contact import Contact
+from model.group import Group
 import re
+# import time
 
 
 class ContactHelper:
@@ -99,6 +101,19 @@ class ContactHelper:
         # submit modification
         self.update()
 
+    def add_contact_to_group_by_id(self, contact_id, group_id):
+        wd = self.app.wd
+        self.select_contact_by_id(contact_id)
+        self.choose_group(group_id)
+        wd.find_element_by_name("add").click()
+        self.app.group.open_group_with_contact_page(group_id)
+        # self.home_page()
+
+    def choose_group(self, id):
+        wd = self.app.wd
+        wd.find_element_by_name("to_group").click()
+        wd.find_element_by_xpath("(//option[@value='%s'])[2]" % id).click()
+
     def return_to_home_page(self):
         wd = self.app.wd
         wd.find_element_by_link_text("home page").click()
@@ -106,8 +121,13 @@ class ContactHelper:
     def home_page(self):
         wd = self.app.wd
         if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_xpath("//input[@value='Send e-Mail']")) > 0):
-            wd.find_element_by_link_text("home").click()
-#            wd.get("http://localhost/addressbook/index.php")
+            # wd.find_element_by_link_text("home").click()
+            wd.get("http://localhost/addressbook/index.php")
+            # time.sleep(7)
+
+    def contact_in_group_page(self):
+        wd = self.app.wd
+
 
     def count(self):
         wd = self.app.wd
@@ -133,6 +153,24 @@ class ContactHelper:
                                                  all_phones_from_home_page=all_phones,
                                                  all_emails_from_home_page=all_emails))
 #                                                 email=all_emails[0], email2=all_emails[1], email3=all_emails[2]))
+        return list(self.contact_cash)
+
+    def get_contact_list_in_group(self):
+        if self.contact_cash is None:
+            wd = self.app.wd
+            self.contact_in_group_page()
+            self.contact_cash = []
+            for row in wd.find_elements_by_name("entry"):
+                cells = row.find_elements_by_tag_name("td")
+                lastname = cells[1].text
+                firstname = cells[2].text
+                adress = cells[3].text
+                id = cells[0].find_element_by_tag_name("input").get_attribute("value")
+                all_emails = cells[4].text
+                all_phones = cells[5].text
+                self.contact_cash.append(Contact(FirstName=firstname, LastName=lastname, Address=adress, id=id,
+                                                 all_phones_from_home_page=all_phones,
+                                                 all_emails_from_home_page=all_emails))
         return list(self.contact_cash)
 
     def open_contact_to_edit_by_index(self, index):
