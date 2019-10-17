@@ -109,6 +109,14 @@ class ContactHelper:
         self.app.group.open_group_with_contact_page(group_id)
         # self.home_page()
 
+    def remove_contact_from_group_by_id(self, contact_id, group_id):
+        wd = self.app.wd
+        self.app.group.open_group_page_with_contacts(group_id)
+        self.select_contact_by_id(contact_id)
+        wd.find_element_by_name("remove").click()
+        self.app.group.open_group_with_contact_page(group_id)
+        # self.home_page()
+
     def choose_group(self, id):
         wd = self.app.wd
         wd.find_element_by_name("to_group").click()

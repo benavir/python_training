@@ -1,4 +1,5 @@
 from model.group import Group
+import time
 
 
 class GroupHelper:
@@ -14,6 +15,11 @@ class GroupHelper:
     def open_group_with_contact_page(self, group_id):
         wd = self.app.wd
         wd.find_element_by_xpath("//a[contains(@href, './?group=%s')]" % group_id).click()
+
+    def open_group_page_with_contacts(self, group_id):
+        wd = self.app.wd
+        wd.get('http://localhost/addressbook/' + './?group=%s' % group_id)
+
 
     def create(self):
         wd = self.app.wd

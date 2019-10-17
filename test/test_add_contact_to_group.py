@@ -1,9 +1,7 @@
-import re
 from model.contact import Contact
 from model.group import Group
 from fixture.orm import ORMFixture
 import random
-import time
 
 
 def test_info_contacts_on_home_page(app, db):
