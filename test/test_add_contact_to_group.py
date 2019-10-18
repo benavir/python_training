@@ -33,7 +33,7 @@ def test_info_contacts_on_home_page(app, db, orm):
         app.group.return_to_home_page()
         groups_without_contact = orm.get_group_list()
     # Выбрать группу из списка групп без контакта
-    group = random.choice(groups_without_contact)
+    group = groups_without_contact[-1]
     app.contact.add_contact_to_group_by_id(contact.id, group.id)
     contacts_in_group_from_group_page = sorted(app.contact.get_contact_list_in_group(), key=Contact.id_or_max)
     db = ORMFixture(host="127.0.0.1", name="addressbook", user="root", password="")
