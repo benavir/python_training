@@ -4,6 +4,7 @@ import random
 
 def test_modify_contact_first_name(app, db, json_contacts, check_ui):
     contact_data = json_contacts
+    app.contact.home_page()
     if len(db.get_contact_list()) == 0:
         app.contact.create()
         app.contact.fill(Contact(FirstName="Test", LastName="Test"))

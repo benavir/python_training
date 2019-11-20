@@ -3,6 +3,7 @@ import random
 
 
 def test_delete_some_contact(app, db, check_ui):
+    app.contact.home_page()
     if len(db.get_contact_list()) == 0:
         app.contact.create()
         app.contact.fill(Contact(FirstName="Test"))

@@ -4,6 +4,7 @@ from model.contact import Contact
 
 def test_add_contact(app, db, json_contacts, check_ui):
     contact = json_contacts
+    app.contact.home_page()
     old_contacts = db.get_contact_list()
     app.contact.create()
     app.contact.fill(contact)
