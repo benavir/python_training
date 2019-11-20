@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Nov 20 16:25:08 MSK 2019","Wed Nov 20 16:25:09 MSK 2019","1126","test","test_add_group","","","","test_add_group[None:name1UkYn:header65BFk:footer]",""
+"passed","Wed Nov 20 16:25:03 MSK 2019","Wed Nov 20 16:25:05 MSK 2019","1248","test","test_add_group","","","","test_add_group[None:nameJ3:headerpL0evIrLbWfEF5yZuHO:footerDweN]",""
+"passed","Wed Nov 20 16:25:06 MSK 2019","Wed Nov 20 16:25:07 MSK 2019","1164","test","test_add_group","","","","test_add_group[None:namel:headerTMytuivxe492RkVuEXQ:footerNP6Oo]",""
+"passed","Wed Nov 20 16:25:07 MSK 2019","Wed Nov 20 16:25:08 MSK 2019","1145","test","test_add_group","","","","test_add_group[None:nameFy:headerJC9q:footerzLf3PMB]",""
+"passed","Wed Nov 20 16:25:05 MSK 2019","Wed Nov 20 16:25:06 MSK 2019","1110","test","test_add_group","","","","test_add_group[None:name:headerSpaKK4PRKtSa1BrY:footer5xvaI]",""
