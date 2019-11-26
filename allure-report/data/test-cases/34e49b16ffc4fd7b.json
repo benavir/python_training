@@ -1,12 +1,12 @@
 {
-  "uid" : "7c5118cf747fc67e",
-  "name" : "test_add_group[None:name:headerSpaKK4PRKtSa1BrY:footer5xvaI]",
+  "uid" : "34e49b16ffc4fd7b",
+  "name" : "test_add_group[None:namel:headerTMytuivxe492RkVuEXQ:footerNP6Oo]",
   "fullName" : "test.test_add_group#test_add_group",
-  "historyId" : "20bea98dd751f6de6b13ea3276ecfc75",
+  "historyId" : "9b1bae1ec14c0b7cd92d7cb85f711300",
   "time" : {
-    "start" : 1574256305151,
-    "stop" : 1574256306261,
-    "duration" : 1110
+    "start" : 1574256306311,
+    "stop" : 1574256307475,
+    "duration" : 1164
   },
   "status" : "passed",
   "flaky" : false,
@@ -24,23 +24,8 @@
     "parameters" : [ ],
     "hasContent" : false,
     "stepsCount" : 0,
-    "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
-  }, {
-    "name" : "check_ui",
-    "time" : {
-      "start" : 1574256305150,
-      "stop" : 1574256305150,
-      "duration" : 0
-    },
-    "status" : "passed",
-    "steps" : [ ],
-    "attachments" : [ ],
-    "parameters" : [ ],
-    "hasContent" : false,
-    "stepsCount" : 0,
-    "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "db",
     "time" : {
@@ -54,14 +39,14 @@
     "parameters" : [ ],
     "hasContent" : false,
     "stepsCount" : 0,
-    "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "app",
     "time" : {
-      "start" : 1574256305108,
-      "stop" : 1574256305150,
-      "duration" : 42
+      "start" : 1574256306272,
+      "stop" : 1574256306310,
+      "duration" : 38
     },
     "status" : "passed",
     "steps" : [ ],
@@ -69,8 +54,23 @@
     "parameters" : [ ],
     "hasContent" : false,
     "stepsCount" : 0,
-    "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "check_ui",
+    "time" : {
+      "start" : 1574256306311,
+      "stop" : 1574256306311,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   } ],
   "afterStages" : [ {
     "name" : "stop::fin",
@@ -85,8 +85,8 @@
     "parameters" : [ ],
     "hasContent" : false,
     "stepsCount" : 0,
-    "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "db::fin",
     "time" : {
@@ -100,8 +100,8 @@
     "parameters" : [ ],
     "hasContent" : false,
     "stepsCount" : 0,
-    "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   } ],
   "labels" : [ {
     "name" : "parentSuite",
@@ -130,17 +130,15 @@
   } ],
   "parameters" : [ {
     "name" : "json_groups",
-    "value" : "None:name:headerSpaKK4PRKtSa1BrY:footer5xvaI"
+    "value" : "None:namel:headerTMytuivxe492RkVuEXQ:footerNP6Oo"
   } ],
   "links" : [ ],
-  "hidden" : false,
-  "retry" : false,
+  "hidden" : true,
+  "retry" : true,
   "extra" : {
-    "severity" : "normal",
-    "retries" : [ ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "7c5118cf747fc67e.json",
-  "parameterValues" : [ "None:name:headerSpaKK4PRKtSa1BrY:footer5xvaI" ]
+  "source" : "34e49b16ffc4fd7b.json",
+  "parameterValues" : [ "None:namel:headerTMytuivxe492RkVuEXQ:footerNP6Oo" ]
 }

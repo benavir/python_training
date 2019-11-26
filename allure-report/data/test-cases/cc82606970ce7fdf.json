@@ -1,52 +1,24 @@
 {
-  "uid" : "e5a1b2036b482645",
+  "uid" : "cc82606970ce7fdf",
   "name" : "test_add_group[None:name1UkYn:header65BFk:footer]",
   "fullName" : "test.test_add_group#test_add_group",
   "historyId" : "4d7810108c5f7a93f5c9e385f426cb7c",
   "time" : {
-    "start" : 1574256308740,
-    "stop" : 1574256309866,
-    "duration" : 1126
+    "start" : 1574258886654,
+    "stop" : 1574258886655,
+    "duration" : 1
   },
-  "status" : "passed",
+  "status" : "broken",
+  "statusMessage" : "AttributeError: module 'pytest' has no attribute 'allure'",
+  "statusTrace" : "app = <fixture.application.Application object at 0x041A6A10>, db = <fixture.db.DbFixture object at 0x041D5830>\njson_groups = None:name1UkYn:header65BFk:footer, check_ui = False\n\n    def test_add_group(app, db, json_groups, check_ui):\n        group = json_groups\n>       with pytest.allure.step('Given a group list'):\nE       AttributeError: module 'pytest' has no attribute 'allure'\n\ntest\\test_add_group.py:8: AttributeError",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ {
-    "name" : "stop",
-    "time" : {
-      "start" : 1574256296799,
-      "stop" : 1574256296799,
-      "duration" : 0
-    },
-    "status" : "passed",
-    "steps" : [ ],
-    "attachments" : [ ],
-    "parameters" : [ ],
-    "hasContent" : false,
-    "stepsCount" : 0,
-    "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
-  }, {
-    "name" : "db",
-    "time" : {
-      "start" : 1574256296799,
-      "stop" : 1574256296809,
-      "duration" : 10
-    },
-    "status" : "passed",
-    "steps" : [ ],
-    "attachments" : [ ],
-    "parameters" : [ ],
-    "hasContent" : false,
-    "stepsCount" : 0,
-    "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
-  }, {
     "name" : "app",
     "time" : {
-      "start" : 1574256308680,
-      "stop" : 1574256308739,
-      "duration" : 59
+      "start" : 1574258886548,
+      "stop" : 1574258886654,
+      "duration" : 106
     },
     "status" : "passed",
     "steps" : [ ],
@@ -54,13 +26,13 @@
     "parameters" : [ ],
     "hasContent" : false,
     "stepsCount" : 0,
-    "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "check_ui",
     "time" : {
-      "start" : 1574256308739,
-      "stop" : 1574256308739,
+      "start" : 1574258886654,
+      "stop" : 1574258886654,
       "duration" : 0
     },
     "status" : "passed",
@@ -69,29 +41,44 @@
     "parameters" : [ ],
     "hasContent" : false,
     "stepsCount" : 0,
-    "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "db",
+    "time" : {
+      "start" : 1574258876743,
+      "stop" : 1574258876774,
+      "duration" : 31
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "stop",
+    "time" : {
+      "start" : 1574258876742,
+      "stop" : 1574258876742,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   } ],
   "afterStages" : [ {
-    "name" : "stop::fin",
-    "time" : {
-      "start" : 1574256309874,
-      "stop" : 1574256310795,
-      "duration" : 921
-    },
-    "status" : "passed",
-    "steps" : [ ],
-    "attachments" : [ ],
-    "parameters" : [ ],
-    "hasContent" : false,
-    "stepsCount" : 0,
-    "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
-  }, {
     "name" : "db::fin",
     "time" : {
-      "start" : 1574256309873,
-      "stop" : 1574256309873,
+      "start" : 1574258886663,
+      "stop" : 1574258886663,
       "duration" : 0
     },
     "status" : "passed",
@@ -100,8 +87,23 @@
     "parameters" : [ ],
     "hasContent" : false,
     "stepsCount" : 0,
-    "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1574258886664,
+      "stop" : 1574258887708,
+      "duration" : 1044
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   } ],
   "labels" : [ {
     "name" : "parentSuite",
@@ -114,7 +116,7 @@
     "value" : "LAPTOP-KEQII5AG"
   }, {
     "name" : "thread",
-    "value" : "23992-MainThread"
+    "value" : "12680-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -133,14 +135,12 @@
     "value" : "None:name1UkYn:header65BFk:footer"
   } ],
   "links" : [ ],
-  "hidden" : false,
-  "retry" : false,
+  "hidden" : true,
+  "retry" : true,
   "extra" : {
-    "severity" : "normal",
-    "retries" : [ ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "e5a1b2036b482645.json",
+  "source" : "cc82606970ce7fdf.json",
   "parameterValues" : [ "None:name1UkYn:header65BFk:footer" ]
 }
